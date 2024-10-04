@@ -32,7 +32,8 @@ Fun fact : `/flag` is where the flag always lives in pwn.college, but unlike in 
 
 In this challenge, we must retrieve the flag by using the absolute path of the directory as an argument to `cat`.
 
-```You cannot use the 'cd' command in this level, and must retrieve the flag by
+```
+You cannot use the 'cd' command in this level, and must retrieve the flag by
 absolute path. Plus, I hid the flag in a different directory! You can find it
 in the file /usr/lib/tcltk/flag. Go cat it out **without** cding into that
 directory!
