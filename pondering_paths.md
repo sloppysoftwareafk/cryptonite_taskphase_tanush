@@ -26,10 +26,12 @@ In this challenge, we just have to invoke `/pwn` function which returns the flag
 As we proceed the paths inside the root directories get more complex.
 In the challenge we access a complex path `/challenge/run`, and it returns the flag.
 
+```
 hacker@paths~program-and-absolute-paths:~$ /challenge/run
 Correct!!!
 /challenge/run is an absolute path! Here is your flag:
 pwn.college{gF2rusOm8Ef32Fw_iUafw4vF_FE.dVDN1QDL0ITN0czW}
+```
 
 ## Position thy self
 
