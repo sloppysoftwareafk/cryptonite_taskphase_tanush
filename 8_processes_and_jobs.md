@@ -46,3 +46,53 @@ After finding it, `kill` it using its `PID` here, 73 and then...
 
 ## Interrupting Processes
 
+The hotkey : `Ctrl-C` (e.g., holding down the `Ctrl` key and pressing `C`) 
+sends an "interrupt" to whatever application is waiting on input from the terminal and, 
+typically, this causes the application to cleanly exit.
+<br>
+It helps to get rid of the process that's clogging up your terminal.
+
+```
+hacker@processes~interrupting-processes:~$ /challenge/run
+I could give you the flag... but I won't, until this process exits. Remember,
+you can force me to exit with Ctrl-C. Try it now!
+^C
+Good job! You have used Ctrl-C to interrupt this process! Here is your flag:
+pwn.college{g8swVSfpbDdzt7aMtjllAYJ2Tx7.dNDN4QDL0ITN0czW}
+```
+
+In this challenge, we need to run the `/challenge/run` process and then interrupt it, 
+to retrieve the flag.
+
+## Suspending Processes
+
+
+
+```
+hacker@processes~suspending-processes:~$ /challenge/run
+I'll only give you the flag if there's already another copy of me running in
+this terminal... Let's check!
+
+UID          PID    PPID  C STIME TTY          TIME CMD
+root         100      82  0 16:45 pts/1    00:00:00 bash /challenge/run
+root         102     100  0 16:45 pts/1    00:00:00 ps -f
+
+I don't see a second me!
+
+To pass this level, you need to suspend me and launch me again! You can
+background me with Ctrl-Z or, if you're not ready to do that for whatever
+reason, just hit Enter and I'll exit!
+^Z
+[1]+  Stopped                 /challenge/run
+hacker@processes~suspending-processes:~$ /challenge/run
+I'll only give you the flag if there's already another copy of me running in
+this terminal... Let's check!
+
+UID          PID    PPID  C STIME TTY          TIME CMD
+root         100      82  0 16:45 pts/1    00:00:00 bash /challenge/run
+root         107      82  0 16:45 pts/1    00:00:00 bash /challenge/run
+root         109     107  0 16:45 pts/1    00:00:00 ps -f
+
+Yay, I found another version of me! Here is the flag:
+pwn.college{40I4wEVMfAD2JFe79Gu76l20MpT.dVDN4QDL0ITN0czW}
+```
