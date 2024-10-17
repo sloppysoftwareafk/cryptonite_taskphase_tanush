@@ -24,5 +24,25 @@ pwn.college{M0fvPw4dZzENz3bsgH--5B7GfPI.dhzM4QDL0ITN0czW}
 Now I will sleep for a while (so that you could find me with 'ps').
 ```
 
+In this challennge, we had to look thru all the running processes.
+After finding the renamed `/challenge/run` here, `/challenge/15201-run-839`, 
+run it to retrieve the flag.
+
 ## Killing Processes
+
+```
+hacker@processes~killing-processes:~$ ps -ef | grep dont_run
+hacker        73      71  0 13:52 ?        00:00:00 /challenge/dont_run
+hacker       114      92  0 13:53 pts/1    00:00:00 grep --color=auto dont_run
+hacker@processes~killing-processes:~$ kill 73
+hacker@processes~killing-processes:~$ /challenge/run
+Great job! Here is your payment:
+pwn.college{gidhbo60F2oD_jPQXSiUsu29t__.dJDN4QDL0ITN0czW}
+```
+
+In this challenge, we had to find the `/challenge/dont_run` process.
+After finding it, `kill` it using its `PID` here, 73 and then...
+`/challenge/run` to retrieve the flag.
+
+## Interrupting Processes
 
