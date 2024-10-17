@@ -220,3 +220,18 @@ This returns the flag.
 
 ## Process Exit Codes
 
+You can access the exit code of the most recently-terminated command using the special `?` variable 
+(don't forget to prepend it with `$` to read its value).
+
+```
+hacker@processes~process-exit-codes:~$ /challenge/get-code
+Exiting with an error code!
+hacker@processes~process-exit-codes:~$ echo $?
+166
+hacker@processes~process-exit-codes:~$ /challenge/submit-code 166
+CORRECT! Here is your flag:
+pwn.college{IClpaBjQxyTLvskVxIhaXts1jZQ.dljN4UDL0ITN0czW}
+```
+
+In this challenge, we had to get the exit code of `/challenge/get-code`.
+Run `/challenge/submit-code` with the exit code as its argument to retrieve the flag.
