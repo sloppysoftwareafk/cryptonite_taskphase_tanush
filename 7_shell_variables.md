@@ -82,3 +82,6 @@ pwn.college{EYYVOk7DUTKN2C5kUBWYZioucdZ.dJjN1QDL0ITN0czW}
 In this challenge, you must invoke `/challenge/run` with the `PWN` variable exported, 
 and set to the value `COLLEGE`, and the `COLLEGE` variable set to the value `PWN`, 
 but not exported (e.g., not inherited by `/challenge/run`) to retrieve the flag.
+
+## Printing Exported Variables
+
