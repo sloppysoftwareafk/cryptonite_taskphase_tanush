@@ -36,3 +36,59 @@ hacker@chaining~your-first-shell-script:~$ bash x.sh
 Great job, you've written your first shell script! Here is the flag:
 pwn.college{0zaBwWUID33XallUolEvtFc8_Cb.dFzN4QDL0ITN0czW}
 ```
+
+In this challenge, we had to had to write the chained command into a shell script.
+The run the file as an argument to `bash` to retrieve the flag.
+
+## Redirecting Script Output
+
+As far as the shell is concerned, your script is just another command. 
+That means you can redirect its input and output just like you did for commands in the Piping module.
+<br>
+All of the various redirection methods work: 
+- `>` for stdout, 
+- `2>` for stderr, 
+- `<` for stdin, 
+- `>>` and 2>> for append-mode redirection, 
+- `>&` for redirecting to other file descriptors, 
+- and `|` for piping to another command.
+
+```
+hacker@chaining~redirecting-script-output:~$ touch x.sh
+hacker@chaining~redirecting-script-output:~$ echo "/challenge/pwn; /challenge/college" > x.sh
+hacker@chaining~redirecting-script-output:~$ bash x.sh > /challenge/solve
+No shenanigans with bash options yet, please! Just run your script with 'bash
+x.sh'.
+ssh-entrypoint: /challenge/solve: Permission denied
+hacker@chaining~redirecting-script-output:~$ bash x.sh | /challenge/solve
+Correct! Here is your flag:
+pwn.college{wuAYigt0sO1sWoQ01RuQYyNUE5N.dhTM5QDL0ITN0czW}
+```
+
+This challenge is just like the previous one...
+but the catch is we need to pipe `|` from our shell script to `/challenge/solve`.
+This will return the flag.
+
+## Executable Shell Scripts
+
+Note : When you invoke bash script.sh, you are, 
+of course launching the bash command with the script.sh argument. 
+This tells bash to read its commands from script.sh instead of standard input, 
+and thus your shell script is executed.
+<br>
+It turns out that you can avoid the need to manually invoke bash. 
+If your shell script file is "executable", you can simply invoke it via its relative or absolute path.
+<br>
+In this challenge, we need to add `/challenge/solve` to the script.
+Then make the script executable using `chmod a+x`. 
+Run the script in the directory of the file to return the flag.
+(you can also use the absolute path of the shell script)
+
+```
+hacker@chaining~executable-shell-scripts:~$ touch x.sh
+hacker@chaining~executable-shell-scripts:~$ echo "/challenge/solve" > x.sh
+hacker@chaining~executable-shell-scripts:~$ chmod a+x x.sh
+hacker@chaining~executable-shell-scripts:~$ ./x.sh
+Congratulations on your shell script execution! Your flag:
+pwn.college{oQCfj_tb9tBQ4bqQD4tOgSiVAXx.dRzNyUDL0ITN0czW}
+```
