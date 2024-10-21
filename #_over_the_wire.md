@@ -31,3 +31,18 @@ Enter the password `ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If`.
 
 ## Bandit Level 1 → Level 2
 
+Instruction : The password for the next level is stored in a file called `-`, 
+located in the home directory.
+
+Command used : `cat ./-`
+
+This returns : `263JGJPfgU6LtdEvgfWU1XP5yac29mFx`, 
+which is the password for the next level, so you can `exit`.
+
+## Bandit Level 2 → Level 3
+
+Instruction : The password for the next level is stored in a file called "spaces in this filename" 
+located in the home directory
+
+This returns : `MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx`, 
+which is the password for the next level, so you can `exit`.
