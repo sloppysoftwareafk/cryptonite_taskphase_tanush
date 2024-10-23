@@ -96,3 +96,24 @@ Log in into level 5 and continue.
 
 ## Bandit Level 5 → Level 6
 
+Instructions : The password for the next level is stored in a file somewhere under the `inhere` directory, 
+and has all of the following properties:
+- human-readable
+- 1033 bytes in size
+- not executable
+
+```
+bandit5@bandit:~$ find -size 1033c
+./inhere/maybehere07/.file2
+bandit5@bandit:~$ cat ./inhere/maybehere07/.file2
+```
+
+(Here,  I just checked for a file of size 1033 and got lucky.)
+<br>
+This returns : `HWasnPhtq9AVKe0dmk45nxy20cvUa6EG`,
+which is the password for the next level, so you can `exit`.
+<br>
+Log in into level 6 and continue.
+
+## Bandit Level 6 → Level 7
+
