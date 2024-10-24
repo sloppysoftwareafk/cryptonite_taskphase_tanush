@@ -158,7 +158,12 @@ Log into level 8 and continue.
 
 ## Bandit Level 8 → Level 9
 
-Instructions : 
+Instructions : The password for the next level is stored in the file `data.txt`, 
+and is the only line of text that occurs only once.
+<br>
+This requires us to use two new commands : 
+- `uniq` to read through the lines (with the `-u` flag to print lines only occuring once.)
+- `sort` to first sort the lines before using `uniq`
 
 ```
 bandit8@bandit:~$ cat data.txt | sort | uniq -u
@@ -168,4 +173,6 @@ This returns : `4CKMh1JI91bUIZZPXDqGanal4xvAg0JM`
 which is the password for the next level, so you can `exit`.
 <br>
 Log in into level 9 and continue.
+
+## Bandit Level 9 → Level 10
 
