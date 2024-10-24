@@ -117,3 +117,43 @@ Log in into level 6 and continue.
 
 ## Bandit Level 6 → Level 7
 
+Instructions : The password for the next level is stored somewhere on the server, 
+and has all of the following properties:
+- owned by user bandit7
+- owned by group bandit6
+- 33 bytes in size
+
+```
+bandit6@bandit:~$ cd /
+bandit6@bandit:/$ find -type f -size 33c -group bandit6 -user bandit7 2> /dev/null
+./var/lib/dpkg/info/bandit7.password
+bandit6@bandit:/$ cat ./var/lib/dpkg/info/bandit7.password
+```
+
+Firstly, `cd` to the root directory to search the full server. 
+Then I passed all the required arguments to the `find` function. 
+However, this initially returns all the files we don't have permission to acces. 
+So we use piping `2>` to append the error-free result to `/dev/null`. 
+<br>
+This returns : `morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj`
+which is the password for the next level, so you can `exit`.
+<br>
+Log in into level 7 and continue.
+
+## Bandit Level 7 → Level 8
+
+Instructions : The password for the next level is stored in the file `data.txt`, 
+next to the word `millionth`.
+
+```
+bandit7@bandit:~$ cat data.txt | grep millionth
+millionth       dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+```
+where, `dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc` is the password, so you can exit.
+<br>
+I assumed `data.txt` would have a dump of data so I used `grep` to find `millionth`.
+I piped the output of `cat` as the input of `grep` using `|`.
+<br>
+Log into level 8 and continue.
+
+## Bandit Level 8 → Level 9
