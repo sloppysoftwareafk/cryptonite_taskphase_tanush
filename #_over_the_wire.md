@@ -157,3 +157,15 @@ I piped the output of `cat` as the input of `grep` using `|`.
 Log into level 8 and continue.
 
 ## Bandit Level 8 → Level 9
+
+Instructions : 
+
+```
+bandit8@bandit:~$ cat data.txt | sort | uniq -u
+```
+
+This returns : `4CKMh1JI91bUIZZPXDqGanal4xvAg0JM` 
+which is the password for the next level, so you can `exit`.
+<br>
+Log in into level 9 and continue.
+
