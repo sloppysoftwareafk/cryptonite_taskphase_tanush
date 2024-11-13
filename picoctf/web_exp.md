@@ -24,3 +24,6 @@ Learnt :
 Incorrect methods I tried :
 - Guessing all cookie names (naturally it failed)
 - Tried changing all the other parameters except the main value
+
+## SOAP
+
