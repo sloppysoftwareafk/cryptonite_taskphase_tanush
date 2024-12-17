@@ -17,3 +17,15 @@ This led me to check for them using format string specifiers.
 
 ![image](/content/nitectf_binaryexp_printthegifts_3.png)
 
+To confirm any input prompt vulnerability we use `%p %x %s`.
+
+![image](/content/nitectf_binaryexp_printthegifts_4.png)
+
+Note : This is called the fuzz input method.
+<br>
+The outputs to these look like standard addresses.
+This can be used to leak the stack and libc addresses.
+After looking into this, I tried geting the offsets of the addresses.
+
+![image](/content/nitectf_binaryexp_printthegifts_5.png)
+
